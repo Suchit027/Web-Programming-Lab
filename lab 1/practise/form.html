@@ -5,10 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Form Example</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-        }
         .form-group {
             margin-bottom: 15px;
         }
@@ -16,6 +12,12 @@
             display: block;
             margin-bottom: 5px;
             font-weight: bold;
+        }
+        .inline {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 5px;
         }
         input[type="submit"] {
             background-color: #4CAF50;
@@ -41,21 +43,31 @@
         <!-- Radio Buttons -->
         <div class="form-group">
             <label>Gender:</label>
-            <input type="radio" id="male" name="gender" value="male">
-            <label for="male">Male</label>
-            <input type="radio" id="female" name="gender" value="female">
-            <label for="female">Female</label>
+            <div class="inline">
+                <input type="radio" id="male" name="gender" value="male">
+                <label for="male">Male</label>
+            </div>
+            <div class="inline">
+                <input type="radio" id="female" name="gender" value="female">
+                <label for="female">Female</label>
+            </div>
         </div>
 
         <!-- Checkboxes -->
         <div class="form-group">
             <label>Hobbies:</label>
-            <input type="checkbox" id="reading" name="hobbies" value="reading">
-            <label for="reading">Reading</label>
-            <input type="checkbox" id="traveling" name="hobbies" value="traveling">
-            <label for="traveling">Traveling</label>
-            <input type="checkbox" id="gaming" name="hobbies" value="gaming">
-            <label for="gaming">Gaming</label>
+            <div class="inline">
+                <input type="checkbox" id="reading" name="hobbies" value="reading">
+                <label for="reading">Reading</label>
+            </div>
+            <div class="inline">
+                <input type="checkbox" id="traveling" name="hobbies" value="traveling">
+                <label for="traveling">Traveling</label>
+            </div>
+            <div class="inline">
+                <input type="checkbox" id="gaming" name="hobbies" value="gaming">
+                <label for="gaming">Gaming</label>
+            </div>
         </div>
 
         <!-- Submit Button -->

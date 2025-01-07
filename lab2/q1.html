@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Student Bio Data Form</title>
+    <style>
+        .heading {
+            text-align: center;
+        }
+
+        .text {
+            margin-bottom: 10px;
+        }
+
+        .box {
+            margin-top: 5px;
+        }
+        .button {
+            background-color: blue;
+            color: white;
+        }
+        .end {
+            margin-top: 10px;
+        }
+        table{
+            margin-top: 5px;
+        }
+        table th, table td{
+            margin-top: 7px;
+            border: 2px solid;
+            
+        }
+    </style>
+</head>
+
+<body>
+    <form action="./submit-form" method="get">
+        <div class="heading">
+            <h1>Student Bio-data Form</h1>
+        </div>
+        <div class="text">
+            <label for="name"><b>Full Name</b></label>
+            <div class="box">
+                <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+            </div>
+        </div>
+        <div class="text">
+            <label for="email"><b>Email</b></label>
+            <div class="box">
+                <input type="text" id="email" name="email" placeholder="Enter your email id">
+            </div>
+        </div>
+        <div class="text">
+            <label for="dob"><b>Date of Birth</b></label>
+            <div class="box">
+                <input type="date">
+            </div>
+        </div>
+        <div class="text">
+            <label><b>Gender</b></label>
+            <div class="box">
+                <input type="radio" id="male" name="gender" value="Male">
+                <label for="male">Male</label>
+            </div>
+            <div class="box">
+                <!-- note that name in input should be same for radio buttons -->
+                <input type="radio" id="female" name="gender" value="female">
+                <label for="female">Female</label>
+            </div>
+        </div>
+        <div class="text">
+            <label><b>Hobbies</b></label>
+            <div class="box">
+                <input type="checkbox" id="reading" name="hobbies" value="reading">
+                <label for="reading">Reading</label>
+            </div>
+            <div class="box">
+                <input type="checkbox" id="sports" name="hobbies" value="sports">
+                <label for="reading">Sports</label>
+            </div>
+            <div class="box">
+                <input type="checkbox" id="music" name="hobbies" value="music">
+                <label for="reading">Music</label>
+            </div>
+        </div>
+        <div class="table">
+            <label></label><b>Academic Details</b></label>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Qualification</th>
+                        <th>Institution</th>
+                        <th>Year</th>
+                        <th>Percentage</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><input type="text" id="qual1" name="qual" placeholder="10th"></td>
+                        <td><input type="text" id="insti1" name="qual" placeholder="School Name"></td>
+                        <td><input type="text" id="year1" name="qual" placeholder="Year"></td>
+                        <td><input type="text" id="per1" name="qual" placeholder="Percentage"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" id="qual2" name="qual" placeholder="10th"></td>
+                        <td><input type="text" id="insti2" name="qual" placeholder="School Name"></td>
+                        <td><input type="text" id="year2" name="qual" placeholder="Year"></td>
+                        <td><input type="text" id="per2" name="qual" placeholder="Percentage"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="end">
+            <!-- note buttons -->
+            <button type="submit" class="button">Submit</button>
+        </div>
+    </form>
+</body>
+
+</html>

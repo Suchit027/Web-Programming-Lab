@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Home Assignment</title>
+    <style>
+        .segment {
+            margin-bottom: 5px;
+        }
+
+        .element {
+            margin-bottom: 10px;
+        }
+
+        .field {
+            margin-bottom: 7px;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <h1>Conference Registeration Form</h1>
+    </div>
+    <div>
+        <form action="./submit-form" method="post">
+            <div class="field">
+                <label>
+                    <h3>Participant Details</h3>
+                </label>
+            </div>
+            <div class="segment">
+                <label>Full Name</label>
+            </div>
+            <div class="element">
+                <input type="text" id="name" name="name" placeholder="Enter your full name." required>
+            </div>
+            <div class="segment">
+                <label>Email</label>
+            </div>
+            <div class="element">
+                <input type="email" id="email" name="email" placeholder="example@domain.com" required>
+            </div>
+            <div class="segment">
+                <label>Phone Number</label>
+            </div>
+            <div class="element">
+                <input type="tel" id="phone" name="phone">
+            </div>
+            <div class="segment">
+                <label>Age</label>
+            </div>
+            <div class="element">
+                <input type="number" min="18" max="60">
+            </div>
+            <div class="field">
+                <label>
+                    <h3>Event Preferences</h3>
+                </label>
+            </div>
+            <div class="element">
+                <select id="dropdown" name="options" multiple>
+                    <option value="Coding Contest">Coding Contest</option>
+                    <option value="Hackathon">Hackathon</option>
+                    <option value="Paper Presentation">Paper Presentation</option>
+                    <option value="Robotics Challenge">Robotics Challenge</option>
+                    <option value="Keynote Session">Keynote Session</option>
+                </select>
+            </div>
+            <div class="segment">
+                <label>Hold Ctrl (Windows) or Command (Mac) to select multiple options.</label>
+            </div>
+            <div class="field">
+                <label>
+                    <h3>Accomodation Details</h3>
+                </label>
+            </div>
+            <div class="element">
+                <input type="radio" id="hostel" name="Accomodation" value="hostel">
+                <label>Hostel</label>
+            </div>
+            <div class="element">
+                <input type="radio" id="Hotel" name="Accomodation" value="Hotel">
+                <label>Hotel</label>
+            </div>
+            <div class="element">
+                <input type="radio" id="None" name="Accomodation" value="None" required>
+                <label>None</label>
+            </div>
+            <div class="field">
+                <label>
+                    <h3>Dietary Preferences</h3>
+                </label>
+            </div>
+            <div class="element">
+                <div>
+                    <input type="checkbox" id="veg" name="diet pref" value="veg">
+                    <label>Vegetarian</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="non-veg" name="diet pref" value="non-veg">
+                    <label>Non - Vegetarian</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="vegan" name="diet pref" value="vegan">
+                    <label>Vegan</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="other" name="diet pref" value="ohter">
+                    <label>Other (Specify below)</label>
+                </div>
+                <div class="element">
+                    <label for="other">If "Other", please specify</label>
+                    <input type="text" id="other_text" name="other_text" disabled>
+                </div>
+            </div>
+            <div class="field">
+                <label><h3>Additional Info</h3></label>
+            </div>
+            <div class="segment">
+                <label for="file">Upload Documents (Student ID - PDF only, max 5 MB):</label>
+            </div>
+            <div class="element">
+                <input type="file" id="file" name="file" accept="application/pdf">
+            </div>
+            <div class="segment">
+                <label for="comments">Comments/ Requests (optional, max 300 characters):</label>
+            </div>
+            <div class="element">
+                <textarea id="comments" name="comments" maxlength="300" placeholder="Write your comments here"></textarea>
+            </div>
+            <div class="field">
+                <label><h3>Consent and Submission</h3></label>
+            </div>
+            <div class="element">
+                <input type="checkbox" id="terms" value="terms" name="terms" required>
+                <label> Check to agree to terms and conditions</label>
+            </div>
+            <div class="element">
+                <button type="submit">Submit</button>
+                <button type="reset">Reset</button>
+            </div>
+        </form>
+        <script>
+            var other_check = document.getElementById("other");
+            var input_text = document.getElementById("other_text");
+            other_check.addEventListener('change', function(event){
+                input_text.disabled = !other_check.checked;
+                if(!other_check.checked){
+                    input_text.value = '';
+                }
+            });
+        </script>
+    </div>
+</body>
+
+</html>

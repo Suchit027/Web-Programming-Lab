@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>CRUD Operations</title>
+    <style>
+        .heading {
+            background-color: blue;
+            color: white;
+            margin-top: 5px;
+            margin-bottom: 5px;
+        }
+
+        .segment {
+            margin-bottom: 5px;
+        }
+
+        button {
+            background-color: blue;
+            color: white;
+        }
+        td, th, tr {
+            border-color: black;
+            border: 1px solid;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="heading">
+        <h1>Employee Database CRUD Operations</h1>
+    </div>
+    <div class="employee_form">
+        <form id="empform">
+            <div class="segment">
+                <label>
+                    <h3>Add Employee</h3>
+                </label>
+            </div>
+            <div class="element">
+                <input type="text" id="name" placeholder="Name" required>
+                <input type="text" id="designation" placeholder="Designation" required>
+                <input type="number" id="salary" placeholder="Salary" required>
+                <button type="submit">Add</button>
+            </div>
+        </form>
+        <h2>Employee List</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Designation</th>
+                    <th>Salary</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="emptable">
+
+            </tbody>
+        </table>
+    </div>
+    <script>
+        let empid = 1;
+        var table = document.getElementById('emptable');
+        var form = document.getElementById('empform');
+        form.addEventListener('submit', function (event) {
+            event.preventDefault();
+            var name = document.getElementById('name').value;
+            var designation = document.getElementById('designation').value;
+            var sal = document.getElementById('salary').value;
+            var row = document.createElement('tr');
+            row.innerHTML = `
+                <td>${empid++}</td>
+                <td>${name}</td>
+                <td>${designation}</td>
+                <td>${sal}</td>
+                <td>
+                    <button class="edit" onclick='edit(this)'>Edit</button>
+                    <button class="delete" onclick="del(this)">Delete</button>
+                </td>`;
+                table.appendChild(row);
+                form.reset();
+        });
+
+        function edit(button){
+            var row = button.parentElement.parentElement;
+            var cells = row.querySelectorAll('td');
+            document.getElementById('name').value = cells[1].innerText;
+            document.getElementById('designation').value = cells[2].innerText;
+            document.getElementById('salary').value = cells[3].innerText;
+            table.removeChild(row);
+        }
+        function del(button){
+            var row = button.parentElement.parentElement;
+            table.removeChild(row);
+        }
+
+    </script>
+</body>
+
+</html>

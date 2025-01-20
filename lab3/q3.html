@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grade Calculator</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f5f7fa;
+      color: #333;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .calculator-container {
+      background: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      width: 300px;
+      text-align: center;
+    }
+
+    .calculator-container h2 {
+      margin-bottom: 20px;
+    }
+
+    .input-group {
+      margin-bottom: 15px;
+    }
+
+    .input-group label {
+      display: block;
+      font-size: 14px;
+      margin-bottom: 5px;
+    }
+
+    .input-group input {
+      width: 100%;
+      padding: 8px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      font-size: 14px;
+    }
+
+    button {
+      background-color: #007bff;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 14px;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    .result {
+      margin-top: 20px;
+      font-size: 18px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="calculator-container">
+    <h2>Grade Calculator</h2>
+    <div class="input-group">
+      <label for="subject1">Subject 1 Marks:</label>
+      <input type="number" id="subject1" placeholder="Enter marks">
+    </div>
+    <div class="input-group">
+      <label for="subject2">Subject 2 Marks:</label>
+      <input type="number" id="subject2" placeholder="Enter marks">
+    </div>
+    <div class="input-group">
+      <label for="subject3">Subject 3 Marks:</label>
+      <input type="number" id="subject3" placeholder="Enter marks">
+    </div>
+    <div class="input-group">
+      <label for="subject4">Subject 4 Marks:</label>
+      <input type="number" id="subject4" placeholder="Enter marks">
+    </div>
+    <button onclick="calculateGrade()">Calculate Grade</button>
+    <div id="result" class="result"></div>
+  </div>
+
+  <script>
+    function calculateGrade() {
+      const subject1 = parseFloat(document.getElementById("subject1").value) || 0;
+      const subject2 = parseFloat(document.getElementById("subject2").value) || 0;
+      const subject3 = parseFloat(document.getElementById("subject3").value) || 0;
+      const subject4 = parseFloat(document.getElementById("subject4").value) || 0;
+
+      const total = subject1 + subject2 + subject3 + subject4;
+      const average = total / 4;
+
+      let grade;
+      if (average > 90) {
+        grade = "A";
+      } else if (average > 80) {
+        grade = "B";
+      } else if (average > 70) {
+        grade = "C";
+      } else if (average > 60) {
+        grade = "D";
+      } else {
+        grade = "F (Fail)";
+      }
+
+      const resultDiv = document.getElementById("result");
+      resultDiv.textContent = `Average: ${average.toFixed(2)}, Grade: ${grade}`;
+    }
+  </script>
+</body>
+</html>

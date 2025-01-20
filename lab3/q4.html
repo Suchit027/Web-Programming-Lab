@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Color Picker</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #f4f4f9;
+    }
+
+    .container {
+      text-align: center;
+    }
+
+    .color-box {
+      width: 200px;
+      height: 100px;
+      margin-top: 20px;
+      border: 1px solid #000;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <label>
+      <input type="radio" name="color" value="red" onclick="changeColor('red')" checked>
+      Red
+    </label>
+    <br>
+    <label>
+      <input type="radio" name="color" value="green" onclick="changeColor('green')">
+      Green
+    </label>
+    <br>
+    <label>
+      <input type="radio" name="color" value="blue" onclick="changeColor('blue')">
+      Blue
+    </label>
+    <div id="colorBox" class="color-box" style="background-color: red;"></div>
+  </div>
+
+  <script>
+    function changeColor(color) {
+      const colorBox = document.getElementById("colorBox");
+      colorBox.style.backgroundColor = color;
+    }
+  </script>
+</body>
+</html>

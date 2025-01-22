@@ -1,141 +1,71 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Online Quiz</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      background-color: #f4f4f9;
-    }
+<html>
+    <head>
+        <title>Online Form</title>
+        <style>
 
-    .quiz-container {
-      background: #ffffff;
-      padding: 20px 30px;
-      border-radius: 8px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      max-width: 400px;
-      width: 100%;
-      text-align: center;
-    }
-
-    .question {
-      font-size: 18px;
-      margin-bottom: 15px;
-    }
-
-    .answers {
-      margin: 20px 0;
-    }
-
-    .answers button {
-      background-color: #007bff;
-      color: white;
-      padding: 10px 15px;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-      margin: 5px;
-    }
-
-    .answers button:hover {
-      background-color: #0056b3;
-    }
-
-    .result {
-      font-size: 20px;
-      font-weight: bold;
-      margin-top: 20px;
-    }
-  </style>
-</head>
-<body>
-  <div class="quiz-container">
-    <div id="quiz">
-      <p class="question" id="question"></p>
-      <div class="answers" id="answers"></div>
-      <div class="result" id="result"></div>
-    </div>
-  </div>
-
-  <script>
-    const quizData = [
-      {
-        question: "What is the capital of France?",
-        options: ["Berlin", "Madrid", "Paris", "Rome"],
-        correct: "Paris"
-      },
-      {
-        question: "Which programming language is used to style web pages?",
-        options: ["HTML", "CSS", "Python", "Java"],
-        correct: "CSS"
-      },
-      {
-        question: "What is 5 + 3?",
-        options: ["5", "8", "10", "15"],
-        correct: "8"
-      }
-    ];
-
-    let currentQuestionIndex = 0;
-    let score = 0;
-
-    const questionElement = document.getElementById("question");
-    const answersElement = document.getElementById("answers");
-    const resultElement = document.getElementById("result");
-
-    function loadQuestion() {
-      resultElement.textContent = ""; // Clear previous result
-      const currentQuestion = quizData[currentQuestionIndex];
-      questionElement.textContent = currentQuestion.question;
-
-      answersElement.innerHTML = ""; // Clear previous options
-      currentQuestion.options.forEach(option => {
-        const button = document.createElement("button");
-        button.textContent = option;
-        button.onclick = () => checkAnswer(option);
-        answersElement.appendChild(button);
-      });
-    }
-
-    function checkAnswer(selectedOption) {
-      const correctAnswer = quizData[currentQuestionIndex].correct;
-      if (selectedOption === correctAnswer) {
-        score++;
-        resultElement.textContent = "Correct!";
-        resultElement.style.color = "green";
-      } else {
-        resultElement.textContent = `Wrong! Correct answer: ${correctAnswer}`;
-        resultElement.style.color = "red";
-      }
-
-      currentQuestionIndex++;
-
-      setTimeout(() => {
-        if (currentQuestionIndex < quizData.length) {
-          loadQuestion();
-        } else {
-          showFinalScore();
-        }
-      }, 1000);
-    }
-
-    function showFinalScore() {
-      questionElement.textContent = "Quiz Completed!";
-      answersElement.innerHTML = "";
-      resultElement.textContent = `Your score: ${score}/${quizData.length}`;
-      resultElement.style.color = "blue";
-    }
-
-    // Load the first question when the page loads
-    loadQuestion();
-  </script>
-</body>
+        </style>
+    </head>
+    <body>
+        <form>
+            <div>
+                <h1>Online Form</h1>
+            </div>
+            <div>
+                <div>
+                    <label>Question 1) What is the capital of France?</label>
+                </div>
+                <div>
+                    <input type="radio" id="a11" value="Berlin" name="a1">Berlin<br>
+                    <input type="radio" id="a12" value="Madrid" name="a1">Madrid<br>
+                    <input type="radio" id="a13" value="Paris" name="a1">Paris<br>
+                    <input type="radio" id="a14" value="Rome" name="a1">Rome<br>
+                </div>
+                <div>
+                    <label>Question 2) Which programming language is used to style web pages?</label>
+                </div>
+                <div>
+                    <input type="radio" id="a21" value="HTML" name="a2">HTML<br>
+                    <input type="radio" id="a22" value="CSS" name="a2">CSS<br>
+                    <input type="radio" id="a23" value="Python" name="a2">Python<br>
+                    <input type="radio" id="a24" value="Java" name="a2">Java<br>
+                </div>
+                <div>
+                    <label>Question 3) What is 5 + 3?</label>
+                </div>
+                <div>
+                    <input type="radio" id="a31" value="5" name="a3">5<br>
+                    <input type="radio" id="a32" value="8" name="a3">8<br>
+                    <input type="radio" id="a33" value="10" name="a3">10<br>
+                    <input type="radio" id="a34" value="15" name="a3">15<br>
+                </div>
+                <div>
+                    <input type="button" id = 'results' onclick="check()" value="Check Results">
+                </div>
+                <div>
+                    <input type="text" readonly id="store">
+                </div>
+            </div>
+        </form>
+        <script>
+            function check(){
+                var ans1 = 'Incorrect', ans2 = 'Incorrect', ans3 = 'Incorrect';
+                // note the querySelector syntax
+                if(document.querySelector('input[name="a1"]:checked').value == 'Paris'){
+                    ans1 = 'Correct';
+                }
+                // note the querySelector syntax
+                if(document.querySelector('input[name="a2"]:checked').value == 'CSS'){
+                    ans2 = 'Correct';
+                }
+                // note the querySelector syntax
+                if(document.querySelector('input[name="a3"]:checked').value == '8'){
+                    ans3 = 'Correct';
+                }
+                var text = document.getElementById('store');
+                text.value = 'answer 1 - ' + ans1 + ' answer 2 - ' + ans2 + ' answer 3 - ' + ans3;
+                // return;
+            }
+        </script>
+    </body>
 </html>

@@ -1,117 +1,54 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dynamic Clock & Greetings</title>
-  <style>
-    body {
-      font-family: 'Arial', sans-serif;
-      margin: 0;
-      padding: 0;
-      background: linear-gradient(to right, #6a11cb, #2575fc);
-      color: white;
-      text-align: center;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      flex-direction: column;
-    }
+    <title>Wishing user with a clock</title>
+    <style>
 
-    .clock-container {
-      background: rgba(0, 0, 0, 0.5);
-      padding: 20px;
-      border-radius: 15px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-      width: 300px;
-    }
-
-    .clock {
-      font-size: 2rem;
-      margin: 20px 0;
-    }
-
-    .greeting {
-      font-size: 1.5rem;
-      margin: 10px 0;
-      font-weight: bold;
-    }
-
-    button {
-      background-color: #ff5722;
-      border: none;
-      color: white;
-      padding: 10px 20px;
-      font-size: 1rem;
-      border-radius: 8px;
-      cursor: pointer;
-    }
-
-    button:hover {
-      background-color: #e64a19;
-    }
-  </style>
+    </style>
 </head>
+
 <body>
-  <div class="clock-container">
-    <div id="greeting" class="greeting"></div>
-    <div id="clock" class="clock"></div>
-    <button onclick="wishUser()">Click for a Wish!</button>
-  </div>
+    <div>
+        <h1>Wishing user</h1>
+    </div>
+    <div id="wish"></div>
+    <div id="greeting"></div>
+    <div id="clock">
 
-  <script>
-    // Function to get the current time and display it
-    function updateClock() {
-      const now = new Date();
-      const hours = String(now.getHours()).padStart(2, "0");
-      const minutes = String(now.getMinutes()).padStart(2, "0");
-      const seconds = String(now.getSeconds()).padStart(2, "0");
-      document.getElementById("clock").textContent = `${hours}:${minutes}:${seconds}`;
-    }
+    </div>
+    <script>
+        function updateclock() {
+            var time = new Date();
+            var hr = time.getHours().toString();
+            var min = time.getMinutes().toString();
+            var sec = time.getSeconds().toString();
+            document.getElementById('clock').textContent = hr + ':' + min + ':' + sec;
+        }
+        function greeting() {
+            var time = new Date();
+            var hours = time.getHours();
+            var greeting = '';
+            if (hours >= 5 && hours < 12) {
+                greeting = 'Good Morning!';
+                document.getElementById('wish').textContent = 'Good Morning! Have a great day!';
+            } else if (hours >= 12 && hours < 18) {
+                greeting = 'Good Afternoon!';
+                document.getElementById('wish').textContent = 'Good Afternoon! Hope you are having a productive day!';
+            } else if (hours >= 18 && hours < 21) {
+                greeting = 'Good Evening!';
+                document.getElementById('wish').textContent = 'Good Evening! Relax and enjoy your time!';
+            } else {
+                greeting = 'Good Night!';
+                document.getElementById('wish').textContent = 'Good Night! Have a restful sleep!';
+            }
 
-    // Function to wish the user based on the current time
-    function wishUser() {
-      const now = new Date();
-      const hour = now.getHours();
-      let greetingMessage;
-
-      if (hour >= 5 && hour < 12) {
-        greetingMessage = "Good Morning!";
-      } else if (hour >= 12 && hour < 17) {
-        greetingMessage = "Good Afternoon!";
-      } else if (hour >= 17 && hour < 21) {
-        greetingMessage = "Good Evening!";
-      } else {
-        greetingMessage = "Good Night!";
-      }
-
-      alert(greetingMessage); // Display a dialog box with the greeting
-    }
-
-    // Function to set the initial greeting on the page
-    function setGreeting() {
-      const now = new Date();
-      const hour = now.getHours();
-      let greetingMessage;
-
-      if (hour >= 5 && hour < 12) {
-        greetingMessage = "Good Morning!";
-      } else if (hour >= 12 && hour < 17) {
-        greetingMessage = "Good Afternoon!";
-      } else if (hour >= 17 && hour < 21) {
-        greetingMessage = "Good Evening!";
-      } else {
-        greetingMessage = "Good Night!";
-      }
-
-      document.getElementById("greeting").textContent = greetingMessage;
-    }
-
-    // Update the clock every second
-    setInterval(updateClock, 1000);
-    updateClock(); // Initial call to display clock immediately
-    setGreeting(); // Set initial greeting on page load
-  </script>
+            document.getElementById('greeting').textContent = greeting;
+        }
+        greeting();
+        updateclock();
+        setInterval(updateclock, 1000);
+    </script>
 </body>
+
 </html>

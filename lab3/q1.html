@@ -51,15 +51,15 @@
             function check(){
                 var ans1 = 'Incorrect', ans2 = 'Incorrect', ans3 = 'Incorrect';
                 // note the querySelector syntax
-                if(document.querySelector('input[name="a1"]:checked').value == 'Paris'){
+                if(document.getElementById('a13').checked){
                     ans1 = 'Correct';
                 }
                 // note the querySelector syntax
-                if(document.querySelector('input[name="a2"]:checked').value == 'CSS'){
+                if(document.getElementById('a22').checked){
                     ans2 = 'Correct';
                 }
                 // note the querySelector syntax
-                if(document.querySelector('input[name="a3"]:checked').value == '8'){
+                if(document.getElementById('a32').checked){
                     ans3 = 'Correct';
                 }
                 var text = document.getElementById('store');

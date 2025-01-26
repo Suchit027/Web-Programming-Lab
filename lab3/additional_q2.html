@@ -31,13 +31,13 @@
             var a = parseInt(document.getElementById('a').value);
             var b = parseInt(document.getElementById('b').value);
             var t = document.getElementById('answer');
-            t.textContent = String(a + b);
+            t.textContent = 'answer - ' + String(a + b);
         }
         function mul() {
             var a = parseInt(document.getElementById('a').value);
             var b = parseInt(document.getElementById('b').value);
             var t = document.getElementById('answer');
-            t.textContent = String(a * b);
+            t.textContent = 'answer - ' + String(a * b);
         }
         function div() {
             var a = parseInt(document.getElementById('a').value);
@@ -47,14 +47,14 @@
                 t.textContent = 'undefined';
             }
             else {
-                t.textContent = String(a / b);
+                t.textContent = 'answer - ' + String(a / b);
             }
         }
         function diff() {
             var a = parseInt(document.getElementById('a').value);
             var b = parseInt(document.getElementById('b').value);
             var t = document.getElementById('answer');
-            t.textContent = String(a - b);
+            t.textContent = 'answer - ' + String(a - b);
         }
     </script>
 </body>

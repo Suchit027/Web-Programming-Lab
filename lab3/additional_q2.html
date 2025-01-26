@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Calculator</title>
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <div>
+        <h1>Calculator</h1>
+    </div>
+    <div>
+        <label>Number 1</label>
+        <input type="text" required id="a"><br>
+        <label>Number 2</label>
+        <input type="text" required id="b"><br>
+    </div>
+    <div>
+        <input type="button" onclick="summ()" value="sum">
+        <input type="button" onclick="mul()" value="multiply">
+        <input type="button" onclick="div()" value="divide">
+        <input type="button" onclick="diff()" value="difference">
+    </div>
+    <div id="answer">
+    </div>
+    <script>
+        function summ() {
+            var a = parseInt(document.getElementById('a').value);
+            var b = parseInt(document.getElementById('b').value);
+            var t = document.getElementById('answer');
+            t.textContent = String(a + b);
+        }
+        function mul() {
+            var a = parseInt(document.getElementById('a').value);
+            var b = parseInt(document.getElementById('b').value);
+            var t = document.getElementById('answer');
+            t.textContent = String(a * b);
+        }
+        function div() {
+            var a = parseInt(document.getElementById('a').value);
+            var b = parseInt(document.getElementById('b').value);
+            var t = document.getElementById('answer');
+            if (b == 0) {
+                t.textContent = 'undefined';
+            }
+            else {
+                t.textContent = String(a / b);
+            }
+        }
+        function diff() {
+            var a = parseInt(document.getElementById('a').value);
+            var b = parseInt(document.getElementById('b').value);
+            var t = document.getElementById('answer');
+            t.textContent = String(a - b);
+        }
+    </script>
+</body>
+
+</html>

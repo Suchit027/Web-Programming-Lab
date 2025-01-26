@@ -2,53 +2,48 @@
 <html>
 
 <head>
-    <title>Wishing user with a clock</title>
-    <style>
+  <title>Wishing user with a clock</title>
+  <style>
 
-    </style>
+  </style>
 </head>
 
 <body>
-    <div>
-        <h1>Wishing user</h1>
-    </div>
-    <div id="wish"></div>
-    <div id="greeting"></div>
-    <div id="clock">
+  <div>
+    <h1>Wishing user</h1>
+  </div>
+  <div id="wish"></div>
+  <div>
+    <input type="button" onclick="greeting()" value="click for a wish">
+  </div>
+  <div id="greeting"></div>
+  <div id="clock">
 
-    </div>
-    <script>
-        function updateclock() {
-            var time = new Date();
-            var hr = time.getHours().toString();
-            var min = time.getMinutes().toString();
-            var sec = time.getSeconds().toString();
-            document.getElementById('clock').textContent = hr + ':' + min + ':' + sec;
-        }
-        function greeting() {
-            var time = new Date();
-            var hours = time.getHours();
-            var greeting = '';
-            if (hours >= 5 && hours < 12) {
-                greeting = 'Good Morning!';
-                document.getElementById('wish').textContent = 'Good Morning! Have a great day!';
-            } else if (hours >= 12 && hours < 18) {
-                greeting = 'Good Afternoon!';
-                document.getElementById('wish').textContent = 'Good Afternoon! Hope you are having a productive day!';
-            } else if (hours >= 18 && hours < 21) {
-                greeting = 'Good Evening!';
-                document.getElementById('wish').textContent = 'Good Evening! Relax and enjoy your time!';
-            } else {
-                greeting = 'Good Night!';
-                document.getElementById('wish').textContent = 'Good Night! Have a restful sleep!';
-            }
-
-            document.getElementById('greeting').textContent = greeting;
-        }
-        greeting();
-        updateclock();
-        setInterval(updateclock, 1000);
-    </script>
+  </div>
+  <script>
+    function updateclock() {
+      var time = new Date();
+      var hr = time.getHours().toString();
+      var min = time.getMinutes().toString();
+      var sec = time.getSeconds().toString();
+      document.getElementById('clock').textContent = hr + ':' + min + ':' + sec;
+    }
+    function greeting() {
+      var time = new Date();
+      var hours = time.getHours();
+      if (hours >= 5 && hours < 12) {
+        document.getElementById('wish').textContent = 'Good Morning! Have a great day!';
+      } else if (hours >= 12 && hours < 18) {
+        document.getElementById('wish').textContent = 'Good Afternoon! Hope you are having a productive day!';
+      } else if (hours >= 18 && hours < 21) {
+        document.getElementById('wish').textContent = 'Good Evening! Relax and enjoy your time!';
+      } else {
+        document.getElementById('wish').textContent = 'Good Night! Have a restful sleep!';
+      }
+    }
+    updateclock();
+    setInterval(updateclock, 1000);
+  </script>
 </body>
 
 </html>

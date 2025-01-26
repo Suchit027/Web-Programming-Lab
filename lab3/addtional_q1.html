@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Font Size Animation</title>
+    <style>
+        #font {
+            color: red;
+            text-align: center;
+            margin-top: 50px;
+            font-size: 20pt; /* Add initial font size */
+        }
+    </style>
+</head>
+<body>
+    <div id="font">FONT+++</div>
+    <script>
+        let increasing = true;
+        const d = document.getElementById('font');
+
+        function animateFont() {
+            let fontSize = parseInt(window.getComputedStyle(d).fontSize); // Use getComputedStyle
+
+            if (increasing) {
+                if (fontSize < 40) {
+                    d.style.fontSize = (fontSize + 1) + 'px'; // Use px instead of pt
+                } else {
+                    increasing = false;
+                    d.textContent = 'FONT---';
+                    d.style.color = 'blue';
+                }
+            } else {
+                if (fontSize > 5) {
+                    d.style.fontSize = (fontSize - 1) + 'px';
+                } else {
+                    increasing = true;
+                    d.textContent = 'FONT+++';
+                    d.style.color = 'red';
+                }
+            }
+        }
+
+        // Call the function every 20ms for smoother animation
+        setInterval(animateFont, 20);
+    </script>
+</body>
+</html>

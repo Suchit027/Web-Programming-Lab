@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Birthday card</title>
+    <script type="text/javascript" src="jquery-3.7.1.js"></script>
+    <script type="text/javascript" lang="javascript">
+        $(document).ready(function () {
+            $("#button").click(function () {
+                var bcolor = $("#backc").val();
+                var font = $("#ft").val();
+                var size = $("#fsize").val();
+                var border = $('input[name="bor"]:checked').val();
+                var text = $("#addt").val();
+                $("#card").css("background-color", bcolor);
+                $("#card").css("font-family", font);
+                $("#card").css("font-size", size + "px");
+                $("#card").css("border-style", border);
+                if($("#addimg").is(':checked')){
+                    $("#img").show();
+                }
+                else{
+                    $("#img").hide();
+                }
+                $("#text").text(text);
+            });
+        });
+    </script>
+    <style>
+        body {
+            background-color: lightyellow;
+            
+        }
+    </style>
+</head>
+
+<body>
+    <div><label>Choose a background-color:</label></div>
+    <select id="backc">
+        <option value="green">Green</option>
+        <option value="red">Red</option>
+        <option value="yellow">Yellow</option>
+    </select><br>
+    <div><label>Choose a font:</label></div>
+    <select id="ft">
+        <option value="Verdana">Verdana</option>
+        <option value="Arial">Arial</option>
+        <option value="Times New Roman">Times New Roman</option>
+    </select><br>
+    <div><label>Specify a numeric font size:</label></div>
+    <input type="text" id="fsize"><br>
+    <div><label>Choose a border style:</label></div>
+    <input type="radio" name="bor" id="r1" value="None">None<br>
+    <input type="radio" name="bor" id="r2" value="Double">Double<br>
+    <input type="radio" name="bor" id="r3" value="Solid">Solid<br>
+    <input type="checkbox" id="addimg">Add the Default Picture<br>
+    <div><label>Enter the greeting text below:</label></div>
+    <textarea id="addt"></textarea>
+    <br>
+    <input type="button" value="Update" id="button">
+    <div id="card">
+        <div id="text"></div>
+        <img src="me.jpg" id="img">
+    </div>
+</body>
+
+</html>

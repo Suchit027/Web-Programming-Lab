@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Bill</title>
+        <script type="text/javascript" src="jquery-3.7.1.js"></script>
+        <script type="text/javascript" lang="javascript">
+            $(document).ready(function(){
+                $("#button").click(function(){
+                    var comp = $("#company").val();
+                    if (comp == 'hp'){
+                        mul = 1;
+                    }
+                    else if(comp == 'nokia'){
+                        mul = 2;
+                    }
+                    else if(comp == 'samsung'){
+                        mul = 3;
+                    }
+                    else if(comp == 'moto'){
+                        mul = 4;
+                    }
+                    else{
+                        mul = 5;
+                    }
+                    var price = 0;
+                    if($("#mobile").is(":checked")){
+                        price += 10 * $("#mval").val();
+                    }
+                    if($("#laptop").is(":checked")){
+                        price += (10 * $("#lval").val());
+                    }
+                    $("#ans").text('price = ' + String(mul * price));
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <div><label>Select devices</label></div>
+        <select id="company">
+            <option value="hp">HP</option>
+            <option value="nokia">Nokia</option>
+            <option value="samsung">Samsung</option>
+            <option value="moto">Motorola</option>
+            <option value="apple">Apple</option>
+        </select>
+        <br>        
+        <input type="checkbox" id="mobile" value="mobile">Want mobile<br>
+        <input type="text" id="mval" placeholder="0"><br>
+        <input type="checkbox" id="laptop" value="laptop">Want Laptop<br>
+        <input type="text" id="lval" placeholder="0"><br>
+        <input type="button" id="button" value="Produce Bill">
+        <div id="ans"></div>
+    </body>
+</html>

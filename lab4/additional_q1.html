@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bouncing Ball with jQuery</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        #ball {
+            width: 50px;
+            height: 50px;
+            background-color: red;
+            border-radius: 50%;
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    </style>
+</head>
+<body>
+    <div id="ball"></div>
+    <script>
+        $(document).ready(function(){
+            function bounce() {
+                $("#ball").animate({ top: $(window).height() - 50 }, 800, "swing", function() {
+                    $("#ball").animate({ top: 0 }, 800, "swing", bounce);
+                });
+            }
+            bounce();
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script type="text/javascript" src="jquery-3.7.1.js"></script>
+    <script type="text/javascript" lang="javascript">
+        $(document).ready(function () {
+            $("#ad").click(function () {
+                var n1 = parseFloat($("#x1").val());
+                var n2 = parseFloat($("#x2").val());
+                if (n1 && n2) {
+                    $("#ans").text('answer is - ' + String(n1 + n2));
+                }
+            });
+            $("#su").click(function () {
+                var n1 = parseFloat($("#x1").val());
+                var n2 = parseFloat($("#x2").val());
+                if (n1 && n2) {
+                    $("#ans").text('answer is - ' + String(n1 - n2));
+                }
+            });
+            $("#mu").click(function () {
+                var n1 = parseFloat($("#x1").val());
+                var n2 = parseFloat($("#x2").val());
+                if (n1 && n2) {
+                    $("#ans").text('answer is - ' + String(n1 * n2));
+                }
+            });
+            $("#di").click(function () {
+                var n1 = parseFloat($("#x1").val());
+                var n2 = parseFloat($("#x2").val());
+                if (n1 && n2) {
+                    if (n2 != 0) {
+                        $("#ans").text('answer is - ' + String(n1 / n2));
+                    }
+                    else {
+                        $("#ans").text('denominator is zero');
+                    }
+                }
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <label>Number 1</label>
+    <input type="text" required id="x1"><br>
+    <label>Number 2</label>
+    <input type="text" required id="x2"><br>
+    <input type="button" id="ad" value="add"><br>
+    <input type="button" id="su" value="subtract"><br>
+    <input type="button" id="mu" value="multiply"><br>
+    <input type="button" id="di" value="divide"><br>
+    <div id="ans">
+
+    </div>
+</body>
+
+</html>

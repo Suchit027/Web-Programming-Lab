@@ -33,21 +33,19 @@
 </head>
 <body>
     <h1>Sample Form</h1>
+    <!-- note action and method -->
     <form action="/submit-form" method="post">
-        <!-- Text Input -->
         <div class="form-group">
             <label for="name">Name:</label>
             <!-- note required, placeholder and type -->
             <input type="text" id="name" name="name" placeholder="Enter your name" required>
         </div>
 
-        <!-- Radio Buttons -->
         <div class="form-group">
             <label>Gender:</label>
             <div class="inline">
-                <!-- note name and value -->
+                <!-- note name has to be same and mention value -->
                 <input type="radio" id="male" name="gender" value="male">
-                <!-- note for -->
                 <label for="male">Male</label>
             </div>
             <div class="inline">
@@ -56,7 +54,6 @@
             </div>
         </div>
 
-        <!-- Checkboxes -->
         <div class="form-group">
             <label>Hobbies:</label>
             <div class="inline">
@@ -73,7 +70,7 @@
             </div>
         </div>
 
-        <!-- Submit Button -->
+        <!-- Submit Button with input tag needs value -->
         <div class="form-group">
             <input type="submit" value="Submit">
         </div>

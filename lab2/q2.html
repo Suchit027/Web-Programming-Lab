@@ -65,12 +65,16 @@
         let empid = 1;
         var table = document.getElementById('emptable');
         var form = document.getElementById('empform');
+        // note event listener submit
         form.addEventListener('submit', function (event) {
+            // note preventdefault
             event.preventDefault();
             var name = document.getElementById('name').value;
             var designation = document.getElementById('designation').value;
             var sal = document.getElementById('salary').value;
+            // note create element
             var row = document.createElement('tr');
+            // note
             row.innerHTML = `
                 <td>${empid++}</td>
                 <td>${name}</td>
@@ -80,16 +84,21 @@
                     <button class="edit" onclick='edit(this)'>Edit</button>
                     <button class="delete" onclick="del(this)">Delete</button>
                 </td>`;
+                // note
                 table.appendChild(row);
+                // note
                 form.reset();
         });
 
         function edit(button){
+            // note parentElement
             var row = button.parentElement.parentElement;
             var cells = row.querySelectorAll('td');
+            // note the index of cells used
             document.getElementById('name').value = cells[1].innerText;
             document.getElementById('designation').value = cells[2].innerText;
             document.getElementById('salary').value = cells[3].innerText;
+            // note
             table.removeChild(row);
         }
         function del(button){

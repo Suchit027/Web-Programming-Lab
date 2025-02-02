@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sliding Text</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        .container {
+            position: relative;
+            display: inline-block;
+            text-align: center;
+        }
+        img {
+            width: 100%;
+            max-width: 600px;
+        }
+        .text {
+            position: absolute;
+            top: -50px;
+            left: 50%;
+            /* transform: translateX(-50%); */
+            background: black;
+            color: white;
+            padding: 10px;
+            transition: top 1s;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="me.jpg" alt="Image">
+        <div class="text">Welcome</div>
+    </div>
+    <script>
+        $(document).ready(function() {
+            $(".text").css("top", "150px");
+        });
+    </script>
+</body>
+</html>

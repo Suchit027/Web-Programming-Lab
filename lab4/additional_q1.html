@@ -23,8 +23,8 @@
     <script>
         $(document).ready(function(){
             function bounce() {
-                $("#ball").animate({ top: $(window).height() - 50 }, 800, "swing", function() {
-                    $("#ball").animate({ top: 0 }, 800, "swing", bounce);
+                $("#ball").animate({ top: $(window).height() - 50 }, 800, function() {
+                    $("#ball").animate({ top: 0 }, 800, bounce);
                 });
             }
             bounce();

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Calculator</title>
+    </head>
+    <body>
+        <form method="post">
+            {% csrf_token %}
+            <h1>Calculator</h1>
+            <label for="n1">Enter number 1</label>
+            <input type="number" id="n1" name="n1"><br>
+            <label for="n2">Enter number 2</label>
+            <input type="number" id="n2" name="n2"><br>
+            <!-- note name is needed in django... id is needed in javascript -->
+            <select id="op" name="op">
+                <option value="add">Add</option>
+                <option value="sub">Subtract</option>
+                <option value="mul">Multiply</option>
+                <option value="div">Divide</option>
+            </select>
+            <button type="submit">Submit</button>
+        </form>
+        {% if ans %}
+            <label>Answer is = {{ans}}</label>
+        {% endif %}
+    </body>
+</html>

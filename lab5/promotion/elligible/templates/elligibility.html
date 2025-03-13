@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Promotion</title>
+    </head>
+    <body>
+        <h1>Promotion ?</h1>
+        <form method="post">
+            {% csrf_token %}
+            <label>Employee - </label>
+            <select id="emp">
+                <option id="emp1">Emp1</option>
+                <option id="emp2">Emp2</option>
+                <option id="emp3">Emp3</option>
+            </select>
+            <br>
+            <label for="doj">Date of Joining</label>
+            <input type="date" id="doj" name="doj"><br>
+            <button type="submit">Am I Eligible for Promotion</button>
+        </form>
+        {% if promotion %}
+            <label>Elligible - </label>
+            <textarea>{{ promotion }}</textarea>
+        {% endif %}
+    </body>
+</html>

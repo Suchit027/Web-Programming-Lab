@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    {% load static %}
+    <title>Magazine cover</title>
+    <link rel="stylesheet" href="{% static 'magazine_app/css/style.css'%}">
+</head>
+
+<body>
+    <img src='{{ img }}' class="cover_image">
+    <div class="element">
+        <label style="background-color: {{ bgcolor }}; color: {{ color }}; font-size: {{ fsize }}px;">{{ text }}</label>
+    </div>
+</body>
+
+</html>

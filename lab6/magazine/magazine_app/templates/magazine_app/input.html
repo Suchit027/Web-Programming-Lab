@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Magazine cover</title>
+    </head>
+    <body>
+        <h1>Magazine cover details</h1>
+        <form method="post">
+            {% csrf_token %}
+            <label for="img">Select image</label>
+            <input type='radio' name="img" id="img" value="/static/magazine_app/images/1.jpeg">Image 1<br>
+            <input type='radio' name="img" id="img" value="/static/magazine_app/images/2.jpeg">Image 2<br>
+            <label for="bgcolor">Select background color</label>
+            <input type="radio" name="bgcolor" id="bgcolor" value="red">Red<br>
+            <input type="radio" name="bgcolor" id="bgcolor" value="blue">Blue<br>
+            <input type="radio" name="bgcolor" id="bgcolor" value="green">Green<br>
+            <label for="fsize">Select font size</label>
+            <input type="number" name="fsize" id="fsize"><br>
+            <label for="color">Select font color</label>
+            <input type="radio" name="color" id="color" value="red">Red<br>
+            <input type="radio" name="color" id="color" value="blue">Blue<br>
+            <input type="radio" name="color" id="color" value="green">Green<br>
+            <label for="msg">Input message</label>
+            <input type="text" name="msg" id="msg"><br>
+            <button type="submit">Submit</button>
+        </form>
+    </body>
+</html>

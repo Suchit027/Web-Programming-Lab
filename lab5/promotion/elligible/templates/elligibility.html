@@ -6,6 +6,7 @@
     <body>
         <h1>Promotion ?</h1>
         <form method="post">
+            <!-- note csrf token -->
             {% csrf_token %}
             <label>Employee - </label>
             <select id="emp">
@@ -18,8 +19,10 @@
             <input type="date" id="doj" name="doj"><br>
             <button type="submit">Am I Eligible for Promotion</button>
         </form>
+        <!-- note if statement -->
         {% if promotion %}
             <label>Elligible - </label>
+            <!-- note how variables are accessed -->
             <textarea>{{ promotion }}</textarea>
         {% endif %}
     </body>

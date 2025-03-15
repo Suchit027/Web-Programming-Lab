@@ -4,7 +4,10 @@ from django.shortcuts import render
 
 
 def student_details(request):
+    # note how request.method is used
     if request.method == 'POST':
+        # note how information is fetched
+        # note that name attribute in the input tag is used to match the key
         name = request.POST.get('name')
         dob = request.POST.get('dob')
         address = request.POST.get('address')

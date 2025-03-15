@@ -15,8 +15,10 @@
         }
     </style>
 </head>
-
+<!-- note the directory structure - templates/appName/htmlFile -->
 <body>
+    <!-- note how url are accessed -->
+     <!-- note that their path is needed to put in urlpatterns -->
     <a href="{% url 'meta' %}">MetaData</a><br>
     <a href="{% url 'review' %}">Reviews</a><br>
     <a href="{% url 'pubinfo' %}">Publisher Info</a><br>

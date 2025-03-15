@@ -4,6 +4,7 @@ from django.shortcuts import render
 def calculate(request):
     if request.method == 'POST':
         op = request.POST.get('op')
+        # note that input is always a string; convert it to int
         n1 = int(request.POST.get('n1'))
         n2 = int(request.POST.get('n2'))
         if op == 'add':

@@ -10,6 +10,8 @@ def getinput(request):
         fsize = request.POST.get('fsize')
         color = request.POST.get('color')
         text = request.POST.get('msg')
+        # note how is renders the request to another html file
+        # note is uses the appName/htmlFile format
         return render(request, 'magazine_app/display.html', {'img': img, 'bgcolor': bgcolor, 'fsize': fsize,
                                                              'color': color, 'text': text})
     return render(request, 'magazine_app/input.html')

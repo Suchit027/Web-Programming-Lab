@@ -4,12 +4,15 @@
 <head>
     {% load static %}
     <title>Magazine cover</title>
+    <!-- note how css static style is used -->
     <link rel="stylesheet" href="{% static 'magazine_app/css/style.css'%}">
 </head>
 
 <body>
+    <!-- note how img class is accessed through the style sheet -->
     <img src='{{ img }}' class="cover_image">
     <div class="element">
+        <!-- for specific style only inline style is allowed -->
         <label style="background-color: {{ bgcolor }}; color: {{ color }}; font-size: {{ fsize }}px;">{{ text }}</label>
     </div>
 </body>

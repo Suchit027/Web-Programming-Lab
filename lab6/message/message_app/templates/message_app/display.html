@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Message</title>
+</head>
+
+<body>
+    <form method="post">
+        {% csrf_token %}
+        <label for="name">Enter name</label>
+        <input type="text" name="name" id="name"><br>
+        <input type="checkbox" name="style" value="bold">Bold
+        <!-- note italic not italics -->
+        <input type="checkbox" name="style" value="italic">Italic
+        <input type="checkbox" name="style" value="underline">Underline
+        <br>
+        <input type="radio" name="color" value="red">Red
+        <input type="radio" name="color" value="blue">Blue
+        <input type="radio" name="color" value="green">Green<br>
+        <label>Enter message</label>
+        <textarea name="msg"></textarea>
+        <button type="submit">Submit</button>
+    </form>
+    {% if msg %}
+        <label style="font-weight: {{ bold }}; font-style: {{ italic }}; text-decoration: {{ underline }}; color: {{ color }};">Name: {{ name }}</label>
+        <label style="font-weight: {{ bold }}; font-style: {{ italic }}; text-decoration: {{ underline }}; color: {{ color }};">Message: {{ msg }}</label>
+    {% endif %}
+</body>
+
+</html>

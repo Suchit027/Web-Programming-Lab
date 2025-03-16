@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Grocery</title>
+    </head>
+    <body>
+        <form method="post">
+            <h1>Select Item:</h1>
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Add Item</button>
+        </form>
+        <table>
+            <thead>
+                <tr>
+                    <th>Item Name</th>
+                    <th>Item Price</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% if wheat %}
+                <tr>
+                    <td>wheat</td>
+                    <td>10</td>
+                </tr>
+                {% endif %}
+                {% if jaggery %}
+                <tr>
+                    <td>jaggery</td>
+                    <td>20</td>
+                </tr>
+                {% endif %}
+                {% if dal %}
+                <tr>
+                    <td>dal</td>
+                    <td>30</td>
+                </tr>
+                {% endif %}
+            </tbody>
+        </table>
+    </body>
+</html>

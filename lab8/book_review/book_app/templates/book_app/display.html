@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Book Review</title>
+    </head>
+    <body>
+        <form method="post">
+            {% csrf_token %}
+            <label>How good is the book ASP NET with c# by Vipul Prakashan?</label><br>
+            <input type="radio" name="review" id="a" value="good">Good {{ good }}
+            <br>
+            <input type="radio" name="review" id="b" value="satisfactory">Satisfactory {{ satisfactory }}
+            <br>
+            <input type="radio" name="review" id="c" value="bad">Bad {{ bad }}
+            <br>
+            <button type="submit">Vote</button>
+        </form>
+    </body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Index</title>
+    </head>
+    <body>
+        <h1>Categories</h1>
+        <ul>
+            {% for category in categories %}
+                <li>URL - <a href="{{ category.url }}">{{ category.name }}</a><br>
+                Name - {{ category.name }}<br>
+                Likes - {{ category.likes }}<br>
+                Visits - {{ category.visits }}<br></li><br>
+            {% endfor %}
+        </ul>
+        <a href="{% url 'add_category' %}">Add Category</a><br>
+        <a href="{% url 'add_page' %}">Add Page</a>
+    </body>
+</html>

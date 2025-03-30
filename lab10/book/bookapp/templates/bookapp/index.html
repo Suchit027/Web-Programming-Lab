@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Index</title>
+    </head>
+    <body>
+        <a href="{% url 'add_book' %}">Add Books</a><br>
+        <a href="{% url 'add_author' %}">Add Author</a><br>
+        <a href="{% url 'add_publisher' %}">Add Publisher</a><br>
+        <form method="post">
+           {% csrf_token %}
+           <ul>
+                {% for book in books %}
+                    <li>Book - {{ book.title }}, Date - {{ book.date }}<br>
+                        Authors - <ul>
+                            {% for author in book.author.all %}
+                            <li>{{ author.firstname}} {{ author.lastname }}</li>
+                            {% endfor %}
+                        </ul>
+                        <br>Publisher - {{ book.publisher.name }}</li>
+                {% endfor %} 
+            </ul>
+        </form>
+    </body>
+</html>

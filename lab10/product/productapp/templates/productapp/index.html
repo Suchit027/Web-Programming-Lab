@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Index</title>
+    </head>
+    <body>
+        <a href="{% url 'add_product' %}">Add Product</a>
+        <ul>
+            {% for product in products %}
+                <li>Title - {{ product.title }}, price - {{ product.salary }}, description - {{ product.description }}</li>
+            {% endfor %}
+        </ul>
+    </body>
+</html>

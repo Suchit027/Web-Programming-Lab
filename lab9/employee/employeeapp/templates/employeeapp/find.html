@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Filter</title>
+    </head>
+    <body>
+        <a href="{% url 'index' %}">Back to home page</a>
+        <form method="post">
+            {% csrf_token %}
+            <label for="company">Enter company name</label>
+            <input type="text" name="company" id="company"><br>
+            <button type="submit">Submit</button>
+        </form>
+        {% if ans %}
+            <ul>
+                {% for x in ans %}
+                <li>
+                    Name - {{ x.name }}, City - {{ x.city }}
+                </li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    </body>
+</html>

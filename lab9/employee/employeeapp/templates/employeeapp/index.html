@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Index</title>
+    </head>
+    <body>
+        <form method="post">
+            {% csrf_token %}
+            <a href="{% url 'add_works' %}">Add data in works</a><br>
+            <a href="{% url 'find' %}">Filter data based on company</a>
+        </form>
+    </body>
+</html>

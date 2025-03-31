@@ -9,30 +9,30 @@ def index(request):
 
 def add_books(request):
     if request.method == 'POST':
-        form = Book(request.POST)
+        form = BookForm(request.POST)
         if form.is_valid():
             form.save()
             return redirect('index')
     else:
-        form = Book()
+        form = BookForm()
     return render(request, 'bookapp/add_book.html', {'form': form})
 
 def add_author(request):
     if request.method == 'POST':
-        form = Author(request.POST)
+        form = AuthorForm(request.POST)
         if form.is_valid():
             form.save()
             return redirect('index')
     else:
-        form = Author()
+        form = AuthorForm()
     return render(request, 'bookapp/add_book.html', {'form': form})
 
 def add_publisher(request):
     if request.method == 'POST':
-        form = Publisher(request.POST)
+        form = PublisherForm(request.POST)
         if form.is_valid():
             form.save()
             return redirect('index')
     else:
-        form = Publisher()
+        form = PublisherForm()
     return render(request, 'bookapp/add_book.html', {'form': form})

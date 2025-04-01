@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Index</title>
+    </head>
+    <body>
+        {% if crs %}
+            <ul>
+                {% for cr in crs %}
+                    <li>{{ cr.name }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    </body>
+</html>

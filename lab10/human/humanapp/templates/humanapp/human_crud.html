@@ -1,0 +1,38 @@
+<form method="post">
+    {% csrf_token %}
+    
+    <!-- Dropdown Section -->
+    <div>
+        {{ form.selected_human.label_tag }}
+        {{ form.selected_human }}
+        <button type="submit" name="load">Load</button>
+    </div>
+
+    <!-- Details Fields -->
+    <div>
+        {{ form.first_name.label_tag }}
+        {{ form.first_name }}
+    </div>
+    <div>
+        {{ form.last_name.label_tag }}
+        {{ form.last_name }}
+    </div>
+    <div>
+        {{ form.phone.label_tag }}
+        {{ form.phone }}
+    </div>
+    <div>
+        {{ form.address.label_tag }}
+        {{ form.address }}
+    </div>
+    <div>
+        {{ form.city.label_tag }}
+        {{ form.city }}
+    </div>
+
+    <!-- Action Buttons -->
+    <div>
+        <button type="submit" name="update">Update</button>
+        <button type="submit" name="delete">Delete</button>
+    </div>
+</form>

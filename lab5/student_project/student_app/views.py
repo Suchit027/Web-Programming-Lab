@@ -13,6 +13,7 @@ def student_details(request):
         address = request.POST.get('address')
         contact_no = request.POST.get('contact_no')
         email = request.POST.get('email')
+        # note how input is processed
         eng_marks = float(request.POST.get('eng_marks'))
         phy_marks = float(request.POST.get('phy_marks'))
         chem_marks = float(request.POST.get('chem_marks'))

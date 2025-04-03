@@ -2,6 +2,7 @@
 <html>
 
 <head>
+    <!-- note load statis is needed -->
     {% load static %}
     <title>Book</title>
     <style>
@@ -9,6 +10,7 @@
             position: absolute;
             width: 50%;
             height: 50%;
+            /* note how url is used to access static folder */
             background-image: url("{% static 'book_app/images/1.jpg' %}");
             background-size: cover;
             background-position: center;

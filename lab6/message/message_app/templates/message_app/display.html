@@ -23,6 +23,7 @@
         <button type="submit">Submit</button>
     </form>
     {% if msg %}
+    <!-- note font-weight, font-style, text-decoration -->
         <label style="font-weight: {{ bold }}; font-style: {{ italic }}; text-decoration: {{ underline }}; color: {{ color }};">Name: {{ name }}</label>
         <label style="font-weight: {{ bold }}; font-style: {{ italic }}; text-decoration: {{ underline }}; color: {{ color }};">Message: {{ msg }}</label>
     {% endif %}

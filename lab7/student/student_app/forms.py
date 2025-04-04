@@ -6,5 +6,5 @@ class StudentForm(forms.Form):
     roll_no = forms.CharField()
     choices = [('Maths', 'maths'), ('Physics', 'physics'),
                ('Chemistry', 'chemistry')]
-    # note multiplechoicefield
+    # note multiplechoicefield and selectmultiple
     subjects = forms.MultipleChoiceField(widget=forms.SelectMultiple, choices=choices)

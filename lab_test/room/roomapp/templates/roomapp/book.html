@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>book</title>
+        <style></style>
+    </head>
+    <body>
+        <form method="post">
+            {% csrf_token %}
+            <label>Enter name</label>
+            <input type="text" name="name"><br>
+            <label>Enter email</label>
+            <input type="email" name="email"><br>
+            <label>Select room</label>
+            <select name="room">
+                {% for room in rooms %}
+                    {% if room.allocated == 0 %}
+                        <option value="{{room.name}}">{{ room.name }}</option>
+                    {% endif %}
+                {% endfor %}
+            </select>
+            <button type="submit">Submit</button>
+        </form>
+    </body>
+</html>

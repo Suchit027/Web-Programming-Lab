@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Index</title>
+</head>
+
+<body>
+    <label>Allocated rooms</label><br>
+    {% for room in rooms %}
+    <ul>
+        {% if room.allocated == 1 %}
+        <li>{{ room.name }}</li>
+        {% endif %}
+    </ul>
+    {% endfor%}
+    <label>Not Allocated rooms</label><br>
+    {% for room in rooms %}
+    <ul>
+        {% if room.allocated == 0 %}
+        <li>{{ room.name }}</li>
+        {% endif %}
+    </ul>
+    {% endfor%}
+</body>
+
+</html>
